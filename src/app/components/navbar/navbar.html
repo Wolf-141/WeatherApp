@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSearch()">
+    <div class="search-bar">
+        <input type="text" class="search-text" name="searchbar" id="searchbar" [(ngModel)]="searchtext" placeholder="Search..." />
+        <input class="submit-btn" type="submit" value="Search"/>
+    </div>
+    <div class="options">
+        <input class="temp-btn" type="button" name="temp_unit" id="temp_unit" [value]="temp_unit() === 'celsius' ? '°C' : '°F'" (click)="toggleTempUnit()">
+    </div>
+</form>

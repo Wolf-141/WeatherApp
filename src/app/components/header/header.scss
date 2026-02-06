@@ -1,0 +1,22 @@
+header{
+  width: 100%;
+  height: 70px;
+  background-color: #2196F3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-title{
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  &:hover{
+    color: rgb(18, 85, 139);
+  }
+  &:active{
+    color: white;
+  }
+}

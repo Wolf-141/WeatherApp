@@ -1,0 +1,53 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2196F3;
+}
+.search-bar {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.search-text{
+    padding: 10px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc;
+}
+
+.submit-btn{
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    border: none; 
+    background: #0050a5; 
+    color: white; 
+    cursor: pointer;
+    &:active{
+        background-color: white;
+        color: black;
+    }
+}
+
+.options {
+    display: flex;
+    align-items: stretch; 
+}
+
+.temp-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(18, 85, 139);
+        color: white;
+    }
+}

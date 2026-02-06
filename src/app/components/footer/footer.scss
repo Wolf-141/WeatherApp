@@ -1,0 +1,19 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+}
+
+.about-link{
+  cursor: pointer;
+  &:hover{
+  color: rgb(18, 85, 139);
+  }
+  &:active{
+    color: white;
+  }
+}
