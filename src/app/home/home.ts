@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Navbar } from "../components/navbar/navbar";
 import { Footer } from "../components/footer/footer";
-import { geocity } from '../model/geocity';
+import { search } from '../model/search';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { geocity } from '../model/geocity';
 })
 
 export class Home {
-  SearchCity(search: geocity){
+  SearchCity(search: search){
     console.log(search);
   }
 }

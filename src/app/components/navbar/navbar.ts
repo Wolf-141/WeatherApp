@@ -1,6 +1,6 @@
 import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { geocity } from '../../model/geocity';
+import { search } from '../../model/search';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,7 @@ import { geocity } from '../../model/geocity';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
-  onSearchCity = output<geocity>();
+  onSearchCity = output<search>();
 
   searchtext: string = '';
 
@@ -31,8 +31,12 @@ export class Navbar {
     }
 
     const NewSearch = {
-      city: this.searchtext,
-      temp_unit: this.temp_unit()
+      name: this.searchtext,
+      temp_unit: this.temp_unit(),
+
+      //@todo - questi due devono essere implementati nella web app
+      language: 'it',
+      timezone: 'auto'
     }
 
     this.onSearchCity.emit(NewSearch);

@@ -1,12 +1,29 @@
-export class weatherinfo{
-    latitude: number = 0;
-    longitude: number = 0;
-    elevation: number = 0;
-    timezone: string = "";
-    temperature_unit = "celsius";
-    time: Array<number> = [];
-    weatherCode: Array<string> = [];
-    is_day: Array<Boolean> = [];
-    precipitation: Array<number> = [];
-    precipitation_probability: Array<number> = [];
+export type weatherinfo = {
+  latitude: number;
+  longitude: number;
+  generationtime_ms: number;
+  utc_offset_seconds: number;
+  timezone: string;
+  timezone_abbreviation: string;
+  elevation: number;
+  hourly_units: HourlyUnits;
+  hourly: HourlyData;
+}
+
+export interface HourlyUnits {
+  time: string;                     // iso8601
+  weather_code: string;             // wmo code
+  temperature_2m: string;           // °C
+  is_day: string;
+  precipitation: string;            // mm
+  precipitation_probability: string; // %
+}
+
+export interface HourlyData {
+  time: string[];
+  weather_code: number[];
+  temperature_2m: number[];
+  is_day: number[];
+  precipitation: number[];
+  precipitation_probability: number[];
 }
