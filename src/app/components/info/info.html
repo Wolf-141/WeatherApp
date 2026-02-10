@@ -1,0 +1,6 @@
+<div>
+    <h3>{{geocity().results[0].name}}</h3>
+    @for (item of weatherinfo().hourly.weather_code; track weatherinfo().hourly.time.at($index)) {
+        {{weatherinfo().hourly.weather_code.at($index)}}
+    }
+</div>

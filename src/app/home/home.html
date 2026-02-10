@@ -1,5 +1,9 @@
-<app-navbar (onSearchCity)="SearchCity($event)" ></app-navbar>
+<app-navbar (onSearchCity)="SearchCity($event)"></app-navbar>
+
 <div class="info-wrapper">
-    
+  @if (searchToggle() && city() && weatherInfo()) {
+    <app-info [geocity]="city()!" [weatherinfo]="weatherInfo()!"></app-info>
+  }
 </div>
+
 <app-footer></app-footer>
