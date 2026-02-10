@@ -31,7 +31,7 @@ export class Weather {
     &hourly=precipitation
     &hourly=precipitation_probability`;
 
-    return this.http.get<weatherinfo>(url);
+    return this.http.get<weatherinfo>(this.url);
   }
 
   getCity(search: search): Observable<geocity>{
