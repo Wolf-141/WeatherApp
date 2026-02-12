@@ -4,6 +4,10 @@
         <div class="weather-item">
             <p>{{item}}</p>
             <p>{{weatherinfo().hourly.temperature_2m.at($index)}}{{weatherinfo().hourly_units.temperature_2m}}</p>
+            <img 
+            [src]="'/immagini-wmo/' + weatherinfo().hourly.weather_code.at($index) + (weatherinfo().hourly.is_day.at($index) === 1 ? 'd' : 'n') + '@2x.png'"
+            [alt]="'codice = ' + weatherinfo().hourly.weather_code.at($index)"
+            >
         </div>
     }
 </div>
