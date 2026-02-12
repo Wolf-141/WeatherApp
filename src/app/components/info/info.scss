@@ -1,0 +1,30 @@
+.weather-city{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.weather-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-color: white rgb(18, 85, 139);
+    padding: 10px 10px 10px 10px;
+}
+
+.weather-item{
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    cursor: pointer;
+}

@@ -4,6 +4,8 @@
         <input class="submit-btn" type="submit" value="Search"/>
     </div>
     <div class="options">
+        <input class="timezone-btn" type="button" name="timezone" id="timezone" [value]="timezone() === 'auto' ? 'city' : 'local'" (click)="toggleTimezone()">
         <input class="temp-btn" type="button" name="temp_unit" id="temp_unit" [value]="temp_unit() === 'celsius' ? '°C' : '°F'" (click)="toggleTempUnit()">
+        <span class="info-temp">{{temp_unit()}}</span>
     </div>
 </form>

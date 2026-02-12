@@ -1,13 +1,22 @@
 <div>
-    <h3>{{geocity().results[0].name}}</h3>
+    <h3 class="weather-city">{{geocity().results[0].name}}</h3>
+    <div class="weather-container">
     @for (item of weatherinfo().hourly.time; track weatherinfo().hourly.time.at($index)) {
-        <div class="weather-item">
-            <p>{{item}}</p>
-            <p>{{weatherinfo().hourly.temperature_2m.at($index)}}{{weatherinfo().hourly_units.temperature_2m}}</p>
+        <div class="weather-item" (click)="showMoreInfo(item)">
             <img 
             [src]="'/immagini-wmo/' + weatherinfo().hourly.weather_code.at($index) + (weatherinfo().hourly.is_day.at($index) === 1 ? 'd' : 'n') + '@2x.png'"
             [alt]="'codice = ' + weatherinfo().hourly.weather_code.at($index)"
             >
+            {{item | date: "shortTime"}}
+            <p>{{weatherinfo().hourly.temperature_2m.at($index)}}{{weatherinfo().hourly_units.temperature_2m}}</p>
         </div>
+    }
+    </div>
+    @for (item of weatherinfo().hourly.time; track weatherinfo().hourly.time.at($index)) {
+        @if (weatherinfo().hourly.time.at($index) === currInfoTime()) {
+            <div>
+                {{item}} - {{weatherinfo().hourly.precipitation.at($index)}}{{weatherinfo().hourly_units.precipitation}} - {{weatherinfo().hourly.precipitation_probability.at($index)}}{{weatherinfo().hourly_units.precipitation_probability}}
+            </div>
+        }
     }
 </div>

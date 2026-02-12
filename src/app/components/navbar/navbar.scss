@@ -35,7 +35,43 @@ form {
 
 .options {
     display: flex;
-    align-items: stretch; 
+    align-items: stretch;
+    gap: 10px;
+}
+
+.timezone-btn{
+    width: 45px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(18, 85, 139);
+        color: white;
+    }
+}
+
+.info-temp{
+    visibility: hidden;
+}
+
+.firstSpan .secondSpan {
+  visibility: hidden;
+  width: 120px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+    
+.firstSpan:hover .secondSpan {
+  visibility: visible;
 }
 
 .temp-btn {

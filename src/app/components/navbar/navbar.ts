@@ -13,6 +13,8 @@ export class Navbar {
 
   searchtext: string = '';
 
+  timezone = signal<string>(Intl.DateTimeFormat().resolvedOptions().timeZone);
+
   temp_unit = signal<string>('celsius');
 
   toggleTempUnit() {
@@ -21,6 +23,15 @@ export class Navbar {
     }
     else{
       this.temp_unit.set('celsius');
+    }
+  }
+
+  toggleTimezone() {
+    if(this.timezone() === 'auto'){
+      this.timezone.set(Intl.DateTimeFormat().resolvedOptions().timeZone);
+    }
+    else{
+      this.timezone.set('auto');
     }
   }
 
@@ -36,7 +47,7 @@ export class Navbar {
 
       //@todo - questi due devono essere implementati nella web app
       language: 'it',
-      timezone: 'auto'
+      timezone: this.timezone()
     }
 
     this.onSearchCity.emit(NewSearch);
