@@ -9,7 +9,7 @@ form {
     border: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 10px;
 }
 
@@ -26,6 +26,7 @@ form {
     background: #0050a5; 
     color: white; 
     cursor: pointer;
+    margin-left: auto;
     &:active{
         background-color: white;
         color: #0050a5;
@@ -49,5 +50,16 @@ form {
     &:hover{
         background-color: rgb(18, 85, 139);
         color: white;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .options {
+        justify-content: flex-start;
     }
 }
