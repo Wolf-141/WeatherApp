@@ -55,23 +55,38 @@ form {
 }
 
 .info-temp{
-    visibility: hidden;
+    position: relative;
+    display: inline-block;
 }
 
-.firstSpan .secondSpan {
-  visibility: hidden;
-  width: 120px;
-  background-color: gray;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
+.info-temp .info-temp-2 {
+    opacity: 0;
+    transition: opacity 2s;
+    width: fit-content;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    top: -33px;
+    right: -0.5%;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    &::after{
+        content: " ";
+        position: absolute;
+        top: 100%;
+        left: 65%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: grey transparent transparent transparent;
+    }
 }
     
-.firstSpan:hover .secondSpan {
-  visibility: visible;
+.info-temp:hover .info-temp-2 {
+    opacity: 1;
+    visibility: visible;
 }
 
 .temp-btn {
