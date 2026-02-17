@@ -45,8 +45,9 @@ export class Navbar {
       name: this.searchtext,
       temp_unit: this.temp_unit(),
 
-      //@todo - questi due devono essere implementati nella web app
+      //@todo - questo deve essere ancora implementato nella web app
       language: 'it',
+      
       timezone: this.timezone()
     }
 

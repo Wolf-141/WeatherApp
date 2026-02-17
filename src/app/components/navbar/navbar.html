@@ -6,6 +6,5 @@
     <div class="options">
         <input class="timezone-btn" type="button" name="timezone" id="timezone" [value]="timezone() === 'auto' ? 'city' : 'local'" (click)="toggleTimezone()">
         <span class="info-temp"><input class="temp-btn" type="button" name="temp_unit" id="temp_unit" [value]="temp_unit() === 'celsius' ? '°C' : '°F'" (click)="toggleTempUnit()"><span class="info-temp-2">{{temp_unit()}}</span></span>
-        
     </div>
 </form>

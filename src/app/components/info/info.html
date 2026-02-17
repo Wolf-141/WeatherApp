@@ -5,7 +5,7 @@
         <div class="weather-item" (click)="showMoreInfo(item)">
             <img 
             [src]="'/immagini-wmo/' + weatherinfo().hourly.weather_code.at($index) + (weatherinfo().hourly.is_day.at($index) === 1 ? 'd' : 'n') + '@2x.png'"
-            [alt]="'codice = ' + weatherinfo().hourly.weather_code.at($index)"
+            [alt]="'codice = ' + weatherinfo().hourly.weather_code.at($index) + weatherinfo().hourly.is_day.at($index)"
             >
             {{item | date: "shortTime"}}
             <p>{{weatherinfo().hourly.temperature_2m.at($index)}}{{weatherinfo().hourly_units.temperature_2m}}</p>
