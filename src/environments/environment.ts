@@ -1,0 +1,5 @@
+export const environment = {
+    production: false,
+    GEOAPI_BASE_URL: "https://geocoding-api.open-meteo.com/v1/search",
+    WEATHERAPI_BASE_URL: "https://api.open-meteo.com/v1/forecast"
+}

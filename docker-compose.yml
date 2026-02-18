@@ -1,0 +1,15 @@
+services:
+  weatherapp:
+    container_name: weatherappcontainer
+    build: .
+    image: weatherapp:v1
+    ports:
+      - 9090:80
+    expose:
+      - 80
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge

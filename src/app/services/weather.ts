@@ -4,6 +4,7 @@ import { geocity } from '../model/geocity';
 import { weatherinfo } from '../model/weatherinfo';
 import { search } from '../model/search';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,9 @@ import { HttpClient } from '@angular/common/http';
 export class Weather {
   http = inject(HttpClient);
 
-  private geoApiUrl = "https://geocoding-api.open-meteo.com/v1/search";
+  private readonly geoApiUrl = environment.GEOAPI_BASE_URL;
 
-  private weatherApiUrl = "https://api.open-meteo.com/v1/forecast";
+  private readonly weatherApiUrl = environment.WEATHERAPI_BASE_URL;
 
   getWeatherInfo(search: search, geocity: geocity): Observable<weatherinfo>{
     const url = `${this.weatherApiUrl}?latitude=${geocity.results[0].latitude}&longitude=${geocity.results[0].longitude}&elevation=${geocity.results[0].elevation}&timezone=${encodeURIComponent(search.timezone)}&temperature_unit=${encodeURIComponent(search.temp_unit)}&hourly=weather_code&hourly=temperature_2m&hourly=is_day&hourly=precipitation&hourly=precipitation_probability`;
