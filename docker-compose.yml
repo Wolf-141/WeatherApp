@@ -2,7 +2,7 @@ services:
   weatherapp:
     container_name: weatherappcontainer
     build: .
-    image: weatherapp:v1
+    image: weatherapp:latest
     ports:
       - 9090:80
     expose:
