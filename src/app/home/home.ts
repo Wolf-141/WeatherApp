@@ -25,7 +25,18 @@ export class Home {
   city = signal<geocity | null>(null);
   weatherInfo = signal<weatherinfo | null>(null);
 
+  toggleSearch(){
+    if(this.searchToggle()){
+      this.searchToggle.set(false);
+    }else{
+      this.searchToggle.set(true);
+    }
+  }
+
   SearchCity(search: search) {
+
+    this.toggleSearch();
+
     this.weatherService.getCity(search).pipe(
       catchError(err => {
         console.log(err); 
@@ -48,8 +59,8 @@ export class Home {
     .subscribe(info => {
       this.weatherInfo.set(info);
       //console.log(`meteo = ${this.weatherInfo()?.generationtime_ms}`);
-      
-      this.searchToggle.set(true);
     });
+
+    this.toggleSearch();
   }
 }
